@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz Project</title>
+	<link rel="stylesheet" href="./css/libs/material.min.css">
+	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="./css/stylesheet.css">
+</head>
+<body>
+
+
+	<div class="mdl-grid">
+		<div class="mdl-cell mdl-cell--12-col center-content">
+			<h4>List of Devices</h4>		
+		</div>
+	</div>
+	
+	<div class="mdl-grid">
+		<div class="mdl-cell mdl-cell--2-col"></div>
+		<div class="mdl-cell mdl-cell--8-col">
+			<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp list-of-devices">
+				<thead>
+					<th>Item - Name</th>
+					<th>Item - Career</th>
+					<th>Item - Description</th>
+					<th>Item - Stock #</th>
+					<th>Item - Configuration</th>
+				</thead>
+				<script id="devices" type="text/template">
+					<td>
+						<%= name %>
+					</td>
+					<td> 
+						<%= career %> 
+					</td>
+					<td> 
+						<%= description %> 
+					</td>
+					<td> 
+						<%= stkNumber %> 
+					</td>
+					<td> 
+						<button class="edit">Edit</button> 
+						<button class="delete">Delete</button>
+					</td>
+				</script>
+			</table>
+		</div>
+	</div>
+
+
+	<script src="./js/libs/underscore-min.js"></script>
+	<script src="./js/libs/jquery.min.js"></script>
+	<script src="./js/libs/backbone-min.js"></script>
+	<script src="./js/libs/material.min.js"></script>
+	<script src="./js/backbone-intro-part4.js"></script>
+	<!--<script src="./js/script3.js"></script>-->
+</body>
+</html>
