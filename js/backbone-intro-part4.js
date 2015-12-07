@@ -14,12 +14,13 @@
 	/**
 	 * Single Model
 	 */
-	App.Models.Item = Backbone.Model.extend({
-		// defaults
-		name: 'Item',
-		description: 'Any-Description',
-		career: 'Company-Name',
-		stkNumber: 5
+	App.Models.Item = Backbone.Model.extend({\
+		// validate information when updating
+		validate: function( attrs ) {
+			if( !$.trim(attrs.name) ) {
+				return 'enter valid information';
+			}
+		}
 	});
 
 	/**
@@ -101,9 +102,14 @@
 			// get attributes to manipulate them and change them
 			var userInput = prompt('Change Name From: ', name);
 
+			// if user clicks on cancel, do not set empty string
+			if( !userInput ) return;
 
-			this.model.set('name', userInput);
+			// pass {validate: true} as an option to activate the validate
+			// function declared on the model
+			this.model.set('name', userInput, {validate: true});
 		}
+
 	});
 
 	/**
